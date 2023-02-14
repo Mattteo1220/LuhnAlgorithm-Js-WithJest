@@ -1,0 +1,25 @@
+{
+  "name": "luhnalgorithm-js-withjest",
+  "version": "1.0.0",
+  "description": "Utilize Javascript to use Luhns account number algorithm to validate numbers and use jest to test it.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest ./*test.js --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mattteo1220/LuhnAlgorithm-Js-WithJest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mattteo1220/LuhnAlgorithm-Js-WithJest/issues"
+  },
+  "homepage": "https://github.com/Mattteo1220/LuhnAlgorithm-Js-WithJest#readme",
+  "dependencies": {
+    "-": "^0.0.1",
+    "jest": "^29.4.2",
+    "save-dev": "^0.0.1-security"
+  }
+}

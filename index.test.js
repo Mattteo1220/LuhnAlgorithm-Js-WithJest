@@ -1,4 +1,5 @@
 const index = require("./index");
+const constants = require("./constants");
 
 
 describe("doubleEveryOtherDigitStartingFromMostRightInArray", () =>{
@@ -64,7 +65,25 @@ describe("validateCredTests", () => {
         expect(index.validateCred(invalid4)).toBeFalsy();
         expect(index.validateCred(invalid5)).toBeFalsy();
     });
+});
 
+
+describe("idInvalidCardCompaniesTests", () => {
+    test("idInvalidCardCompaniesTests_GivenListOfBadCards_ReturnsCompanyNames", () => {
+        let invalidCardNumbers = [
+            [4, 5, 3, 2, 7, 7, 8, 7, 7, 1, 0, 9, 1, 7, 9, 5],
+            [5, 7, 9, 5, 5, 9, 3, 3, 9, 2, 1, 3, 4, 6, 4, 3],
+            [3, 7, 5, 7, 9, 6, 0, 8, 4, 4, 5, 9, 9, 1, 4],
+            [6, 0, 1, 1, 1, 2, 7, 9, 6, 1, 7, 7, 7, 9, 3, 5],
+            [5, 3, 8, 2, 0, 1, 9, 7, 7, 2, 8, 8, 3, 8, 5, 4]
+        ];
+
+        let expected = new Set([constants.Visa, constants.MasterCard, constants.AmericanExpress, constants.Discover, constants.MasterCard]);
+
+        let actual = new Set(index.idInvalidCardCompanies(invalidCardNumbers));
+
+        expect(actual).toEqual(expected);
+    });
 });
 
 

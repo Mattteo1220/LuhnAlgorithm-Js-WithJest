@@ -1,5 +1,7 @@
 // drop last digit in array
 
+const constants = require("./constants");
+
 const doubleEveryOtherDigitStartingFromMostRightInArray = (accountNumber) => {
     console.log(accountNumber);
     let newAccountNumber = new Array();
@@ -35,8 +37,34 @@ const validateCred = (accountNumber) => {
     return (sum % 10 === 0 ? true : false);
 }
 
+const idInvalidCardCompanies = (accountNumbersArray) => {
+    let companiesWithBadCardNumbers = new Array();
+
+    for(let badNumberArray of accountNumbersArray){
+        switch(badNumberArray[0]){
+            case 3:
+                companiesWithBadCardNumbers.push(constants.AmericanExpress);
+                break;
+            case 4:
+                companiesWithBadCardNumbers.push(constants.Visa);
+                break;
+            case 5:
+                companiesWithBadCardNumbers.push(constants.MasterCard);
+                break;
+            case 6:
+                companiesWithBadCardNumbers.push(constants.Discover);
+                break;
+            default:
+                throw "Invalid Vendor Id";
+        }
+    }
+    return companiesWithBadCardNumbers;
+
+}
+
 
 module.exports = {
     validateCred,
-    doubleEveryOtherDigitStartingFromMostRightInArray
+    doubleEveryOtherDigitStartingFromMostRightInArray,
+    idInvalidCardCompanies
 };

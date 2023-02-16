@@ -6,6 +6,10 @@
   "scripts": {
     "test": "jest ./*test.js --colors"
   },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom" : ["*.{js,jsx}"]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mattteo1220/LuhnAlgorithm-Js-WithJest.git"
